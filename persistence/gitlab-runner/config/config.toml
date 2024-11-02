@@ -1,0 +1,15 @@
+[[runners]]
+  name = "runner"
+  url = "http://gitlab/ci"
+  token = "glrt-E83cbcqaBz6Jyw12ApKp"
+  executor = "docker"
+
+
+
+[runners.docker]
+  image = "docker"
+  privileged = true
+##  disable_cache = true
+  volumes = ["/var/run/docker.sock:/var/run/docker.sock"]
+  extra_hosts = ["gitlab:192.168.201.10"]
+  network_mode="gitlab_gitlab_net"
